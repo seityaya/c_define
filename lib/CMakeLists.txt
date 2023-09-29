@@ -38,7 +38,8 @@ set(INC_LIST
     yaya_rand.c
     yaya_rand.h
     yaya_debug.h
-    yaya_chek.h)
+    yaya_chek.h
+)
 
 add_library(${PROJECT_NAME} SHARED ${SRC_LIST} ${INC_LIST})
 

@@ -10,7 +10,7 @@ set(CMAKE_C_STANDARD 11)
 add_definitions(-std=c11)
 
 set(VERSION 0.1)
-set(PROJECT_NAME defines_test)
+set(PROJECT_NAME define_test)
 project(${PROJECT_NAME})
 
 add_compile_options(-Wall -Wfatal-errors -Wconversion -Warith-conversion -Wfloat-conversion -Wsign-conversion -Wenum-conversion)
@@ -47,10 +47,9 @@ if (NOT TARGET yaya_unit)
     target_link_libraries(${PROJECT_NAME} yaya_unit)
 endif()
 
-
-if (NOT TARGET yaya_defines)
-    add_subdirectory(${CMAKE_SOURCE_DIR}/../lib/ yaya_defines)
+if (NOT TARGET yaya_define)
+    add_subdirectory(${CMAKE_SOURCE_DIR}/../lib/ yaya_define)
     target_include_directories(${PROJECT_NAME} PUBLIC ../lib/)
-    target_link_libraries(${PROJECT_NAME} yaya_defines)
+    target_link_libraries(${PROJECT_NAME} yaya_define)
 endif()
 

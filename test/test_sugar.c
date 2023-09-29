@@ -64,21 +64,21 @@ UT_FUNC_GEN(test_sugar) {
         init_val(A, int);
         init_val(B, char);
         UT_ASSERT_NUM_EQ(0, A);
-        UT_ASSERT_CHR_EQ(char_c('0'), B);
+        UT_ASSERT_CHR_EQ(char_c('\0'), B);
 
         init_ptr(a, int);
         init_ptr(b, char);
-        //        UT_ASSERT_TYPE_EQ((int*), a);
-        //        UT_ASSERT_TYPE_EQ((char*), b);
+        UT_ASSERT_TYP_EQ((int*){0}, a);
+        UT_ASSERT_TYP_EQ((char*){0}, b);
         UT_ASSERT_NUL_EQ(a);
         UT_ASSERT_NUL_EQ(b);
 
         crete_val(i, 1.0);
         UT_ASSERT_FLT_EQ(1.0, i);
-        UT_ASSERT_TYP_EQ( (double){0}, i);
+        UT_ASSERT_TYP_EQ((double){0}, i);
 
         crete_ptr(p, i);
         UT_ASSERT_PTR_EQ(p, &i);
-        UT_ASSERT_TYP_EQ( (double*){0}, p);
+        UT_ASSERT_TYP_EQ((double*){0}, p);
     } UT_GROUP_END;
 }
